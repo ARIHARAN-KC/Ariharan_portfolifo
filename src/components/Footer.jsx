@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
-import '../Styles/footer.css';
+import '../Styles/Footer.css';
 
 function Footer() {
   const socialLinks = [
