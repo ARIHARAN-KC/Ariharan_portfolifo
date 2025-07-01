@@ -1,0 +1,315 @@
+/* Projects Page Styles with AI/ML Theme */
+:root {
+  --primary: #4f46e5; /* Indigo for AI/ML theme */
+  --primary-light: #7dd3fc; /* Sky blue for contrast */
+  --secondary: #3730a3; /* Deep indigo */
+  --dark: #0f172a; /* Dark background */
+  --darker: #020617; /* Darker background */
+  --light: #f8f9fa; /* Light text */
+  --accent: #db2777; /* Pink accent for ML */
+  --success: #22d3ee; /* Cyan for success */
+  --ai-color: #a78bfa; /* Light purple for AI */
+  --ml-color: #f472b6; /* Soft pink for ML */
+  --transition: all 0.3s ease; /* Reusable transition */
+}
+
+/* Base Styles */
+.projects-section {
+  position: relative;
+  padding: 5rem 5%;
+  background-color: var(--darker);
+  color: var(--light);
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Background Pattern */
+.projects-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(167, 139, 250, 0.15) 0%, transparent 20%);
+  z-index: 0;
+  opacity: 0.7;
+}
+
+/* Heading */
+.projects-heading {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+  color: var(--light);
+}
+
+.projects-heading-highlight {
+  background: linear-gradient(90deg, var(--primary), var(--ai-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.projects-heading-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--ai-color));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: var(--transition);
+}
+
+.projects-heading:hover .projects-heading-highlight::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Projects Container */
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Project Item */
+.project-item {
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-item:hover,
+.project-item:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(167, 139, 250, 0.4);
+  border-color: var(--ai-color);
+}
+
+.project-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.project-item:hover::before,
+.project-item:focus::before {
+  transform: translateX(100%);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Project Details */
+.project-details {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+.project-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+}
+
+/* Tech Tags */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tech-tag {
+  background: rgba(79, 70, 229, 0.2);
+  color: var(--primary-light);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.project-tech-tag:hover {
+  background: var(--ai-color);
+  color: var(--darker);
+}
+
+/* Project Actions */
+.project-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.project-action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: var(--light);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.project-action:hover,
+.project-action:focus {
+  background: var(--ai-color);
+  transform: translateY(-2px);
+}
+
+/* Closing Section */
+.projects-closing {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.projects-closing-text {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1.5rem;
+}
+
+.github-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--secondary);
+  color: var(--light);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.github-profile:hover,
+.github-profile:focus {
+  background: var(--ai-color);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-name {
+    font-size: 1.6rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 5%;
+  }
+
+  .projects-heading {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+  }
+
+  .projects-container {
+    padding: 1.5rem;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 2rem 4%;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-image {
+    height: 160px;
+  }
+
+  .project-name {
+    font-size: 1.4rem;
+  }
+
+  .project-description,
+  .project-tech-tag,
+  .project-action {
+    font-size: 0.9rem;
+  }
+
+  .projects-closing-text,
+  .github-profile {
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility */
+.project-item:focus,
+.project-action:focus,
+.github-profile:focus {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 3px;
+}
+
+/* Fallback for backdrop-filter */
+@supports not (backdrop-filter: blur(12px)) {
+  .project-item {
+    background: rgba(2, 6, 23, 0.9);
+  }
+}
