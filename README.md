@@ -53,31 +53,6 @@ A clean, modern portfolio that highlights my:
 
 ---
 
-## 🧾 Folder Structure
-
-my-portfolio/
-├── public/
-│ ├── assets/
-│ │ ├── images/
-│ │ │ └── homepage.png
-│ │ └── pdf/
-│ │ └── Ariharan-resume.pdf
-├── src/
-│ ├── components/
-│ │ └── Resume.jsx
-│ ├── Styles/
-│ │ └── Resume.css
-│ └── App.jsx
-├── index.html
-├── package.json
-└── README.md
-
-yaml
-Copy
-Edit
-
----
-
 ## 🚀 Getting Started
 
 ### 1️⃣ Clone & Setup
