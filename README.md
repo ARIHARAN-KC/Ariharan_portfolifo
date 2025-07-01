@@ -28,14 +28,14 @@ A clean, modern portfolio that highlights my:
 
 ### 🏠 Homepage
 
-(![image](https://github.com/user-attachments/assets/28fb94b4-5112-4619-b0c6-601c82b5c804)
-)
+![image](https://github.com/user-attachments/assets/28fb94b4-5112-4619-b0c6-601c82b5c804)
+
 
 ---
 
 ### 📄 Resume Section
 
-(![image](https://github.com/user-attachments/assets/7c006a66-bc4f-464c-b403-0526896f6ea1))
+![image](https://github.com/user-attachments/assets/7c006a66-bc4f-464c-b403-0526896f6ea1)
 
 > 📂 PDF located at: `public/assets/pdf/Ariharan-resume.pdf`
 
@@ -50,31 +50,6 @@ A clean, modern portfolio that highlights my:
 | **Database**    | MongoDB, MySQL                                           |
 | **AI/ML**       | Whisper, TensorFlow, FFmpeg, Google Translate API, gTTS  |
 | **Tools**       | Git, Power BI, JIRA                                      |
-
----
-
-## 🧾 Folder Structure
-
-my-portfolio/
-├── public/
-│ ├── assets/
-│ │ ├── images/
-│ │ │ └── homepage.png
-│ │ └── pdf/
-│ │ └── Ariharan-resume.pdf
-├── src/
-│ ├── components/
-│ │ └── Resume.jsx
-│ ├── Styles/
-│ │ └── Resume.css
-│ └── App.jsx
-├── index.html
-├── package.json
-└── README.md
-
-yaml
-Copy
-Edit
 
 ---
 
