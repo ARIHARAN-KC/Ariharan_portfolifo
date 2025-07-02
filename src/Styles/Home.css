@@ -11,7 +11,13 @@
   --ml-color: #f472b6;
   --transition: all 0.3s ease;
 }
-
+ 
+.main-content{
+  padding-left: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
 /* Base Styles */
 .home-section {
   position: relative;
@@ -76,14 +82,17 @@
   width: 100%;
   max-width: 600px;
   z-index: 2;
-  padding: 0 1rem;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px; /* Applied requested padding values */
   margin-bottom: 2rem;
 }
 
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.25rem;  
 }
 
 /* Heading */
@@ -292,8 +301,7 @@
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--primary);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Removed border, kept shadow */
   background: rgba(2, 6, 23, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);

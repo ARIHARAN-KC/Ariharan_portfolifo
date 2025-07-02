@@ -92,7 +92,7 @@ function Home() {
         }}
       ></div>
       
-      <div className="home-content">
+      <div className="home-content" style={{ paddingTop: '0px', paddingRight: '0px', paddingBottom: '0px', paddingLeft: '0px' }}>
         <div className="content-wrapper">
           <h1 className="home-heading">
             <span className="greeting">Hi, I'm</span>
