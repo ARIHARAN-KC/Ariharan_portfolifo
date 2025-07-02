@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaBrain } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { HiOutlineMail } from 'react-icons/hi';
-import { SiDjango, SiFlask, SiReact, SiNodedotjs, SiTensorflow, SiPytorch, SiStreamlit, SiMongodb } from 'react-icons/si';
+import {
+  SiDjango, SiFlask, SiReact, SiNodedotjs,
+  SiTensorflow, SiPytorch, SiStreamlit, SiMongodb
+} from 'react-icons/si';
 import { DiPython } from 'react-icons/di';
 import '../Styles/Home.css';
 import animeBoy from '../assets/anime-boy.png';
@@ -13,12 +16,7 @@ function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeTech, setActiveTech] = useState(null);
   const [typedText, setTypedText] = useState('');
-  const [isTyping, setIsTyping] = useState(true);
-  const roles = ["AI/ML Developer", "Full Stack Developer", "MERN Stack Developer","Prompt Engineer"];
-
-  const handleImageError = () => {
-    setImgError(true);
-  };
+  const roles = ["AI/ML Developer", "Full Stack Developer", "MERN Stack Developer", "Prompt Engineer"];
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -37,26 +35,18 @@ function Home() {
 
     const type = () => {
       const currentRole = roles[currentRoleIndex];
-      
-      if (isDeleting) {
-        setTypedText(currentRole.substring(0, currentCharIndex - 1));
-        currentCharIndex--;
-        typingSpeed = 50;
-      } else {
-        setTypedText(currentRole.substring(0, currentCharIndex + 1));
-        currentCharIndex++;
-        typingSpeed = 150;
-      }
+      setTypedText(currentRole.substring(0, currentCharIndex + (isDeleting ? -1 : 1)));
+      currentCharIndex += isDeleting ? -1 : 1;
 
       if (!isDeleting && currentCharIndex === currentRole.length) {
-        setIsTyping(false);
         typingSpeed = 2000;
         isDeleting = true;
       } else if (isDeleting && currentCharIndex === 0) {
-        setIsTyping(true);
         isDeleting = false;
         currentRoleIndex = (currentRoleIndex + 1) % roles.length;
         typingSpeed = 500;
+      } else {
+        typingSpeed = isDeleting ? 50 : 150;
       }
 
       timeoutId = setTimeout(type, typingSpeed);
@@ -67,45 +57,46 @@ function Home() {
   }, []);
 
   const techIcons = [
-    { icon: <SiDjango />, name: "Django", color: "#092e20", className: "django-icon" },
-    { icon: <SiFlask />, name: "Flask", color: "#000000", className: "flask-icon" },
-    { icon: <SiReact />, name: "React", color: "#61dafb", className: "react-icon" },
-    { icon: <SiNodedotjs />, name: "Node.js", color: "#68a063", className: "node-icon" },
-    { icon: <SiTensorflow />, name: "TensorFlow", color: "#FF6F00", className: "tensorflow-icon" },
-    { icon: <SiPytorch />, name: "PyTorch", color: "#EE4C2C", className: "pytorch-icon" },
-    { icon: <DiPython />, name: "Python", color: "#3776AB", className: "python-icon" },
-    { icon: <SiStreamlit />, name: "Streamlit", color: "#FF4B4B", className: "streamlit-icon" },
-    { icon: <SiMongodb />, name: "MongoDB", color: "#47A248", className: "mongodb-icon" },
-    { icon: <FaBrain />, name: "Prompt Engineering", color: "#8b5cf6", className: "prompt-icon" },
+    { icon: <SiDjango />, name: "Django", color: "#092e20" },
+    { icon: <SiFlask />, name: "Flask", color: "#000000" },
+    { icon: <SiReact />, name: "React", color: "#61dafb" },
+    { icon: <SiNodedotjs />, name: "Node.js", color: "#68a063" },
+    { icon: <SiTensorflow />, name: "TensorFlow", color: "#FF6F00" },
+    { icon: <SiPytorch />, name: "PyTorch", color: "#EE4C2C" },
+    { icon: <DiPython />, name: "Python", color: "#3776AB" },
+    { icon: <SiStreamlit />, name: "Streamlit", color: "#FF4B4B" },
+    { icon: <SiMongodb />, name: "MongoDB", color: "#47A248" },
+    { icon: <FaBrain />, name: "Prompt Engineering", color: "#8b5cf6" },
   ];
 
   return (
     <section className="home-section">
       <div className="bg-grid"></div>
       <div className="particles"></div>
-      <div 
-        className="cursor-follower" 
+
+      <div
+        className="cursor-follower"
         style={{
           left: `${mousePosition.x}px`,
           top: `${mousePosition.y}px`,
           backgroundColor: activeTech ? activeTech.color : 'rgba(79, 70, 229, 0.1)',
         }}
-      ></div>
-      
-      <div className="home-content" style={{ paddingTop: '0px', paddingRight: '0px', paddingBottom: '0px', paddingLeft: '0px' }}>
+      />
+
+      <div className="home-content">
         <div className="content-wrapper">
           <h1 className="home-heading">
             <span className="greeting">Hi, I'm</span>
             <span className="name">Ariharan K C</span>
           </h1>
-          
+
           <div className="typing-container" aria-live="polite">
             <h2 className="home-subheading">
               <span className="typed-text">{typedText}</span>
               <span className="cursor">|</span>
             </h2>
           </div>
-          
+
           <p className="home-description">
             I craft intelligent full-stack applications, blending <span className="tech-highlight">web development</span> with <span className="tech-highlight">AI/ML</span>. 
             From building medical imaging tools like <span className="tech-highlight">MedScanAI</span> to AI-driven streaming apps like <span className="tech-highlight">Orion Streaming</span>, 
@@ -125,23 +116,23 @@ function Home() {
 
           <div className="home-social">
             {[
-              { icon: <FaGithub />, url: "https://github.com/ARIHARAN-KC", label: "Visit Ariharan’s GitHub Profile", title: "GitHub" },
-              { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/ariharankc07/", label: "Visit Ariharan’s LinkedIn Profile", title: "LinkedIn" },
-              { icon: <FaXTwitter  />, url: "https://x.com/AriharanKC_007", label: "Visit Ariharan’s X Profile", title: "X" },
-              { icon: <HiOutlineMail />, url: "mailto:ariharankc@gmail.com", label: "Email Ariharan K C", title: "Email" },
-            ].map((social, index) => (
-              <a 
-                key={index}
-                href={social.url} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              { icon: <FaGithub />, url: "https://github.com/ARIHARAN-KC", label: "GitHub" },
+              { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/ariharankc07/", label: "LinkedIn" },
+              { icon: <FaXTwitter />, url: "https://x.com/AriharanKC_007", label: "X" },
+              { icon: <HiOutlineMail />, url: "mailto:ariharankc@gmail.com", label: "Email" },
+            ].map((social, idx) => (
+              <a
+                key={idx}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="home-social-icon"
                 aria-label={social.label}
-                title={social.title}
+                title={social.label}
               >
-                <div className="social-icon-bg"></div>
+                <div className="social-icon-bg" />
                 {social.icon}
-                <span className="social-tooltip">{social.title}</span>
+                <span className="social-tooltip">{social.label}</span>
               </a>
             ))}
           </div>
@@ -152,29 +143,29 @@ function Home() {
         <div className="profile-container">
           <div className="profile-frame">
             {imgError ? (
-              <svg className="home-error-svg" viewBox="0 0 100 100" aria-label="Profile image placeholder">
+              <svg className="home-error-svg" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="50" fill="rgba(79, 70, 229, 0.3)" />
                 <text x="50" y="55" textAnchor="middle" fill="#f8f9fa" fontSize="12">Profile</text>
               </svg>
             ) : (
-              <img 
-                src={animeBoy} 
-                alt="Ariharan K C Profile Image" 
-                className="home-profile-image" 
-                onError={handleImageError} 
+              <img
+                src={animeBoy}
+                alt="Ariharan K C Profile"
+                className="home-profile-image"
+                onError={() => setImgError(true)}
               />
             )}
           </div>
-          
+
           <div className="home-tech-icons">
-            {techIcons.map((tech, index) => (
-              <div 
-                key={index}
-                className={`home-tech-icon ${tech.className}`}
+            {techIcons.map((tech, idx) => (
+              <div
+                key={idx}
+                className="home-tech-icon"
                 onMouseEnter={() => setActiveTech(tech)}
                 onMouseLeave={() => setActiveTech(null)}
                 role="button"
-                aria-label={`Technology: ${tech.name}`}
+                aria-label={`Tech: ${tech.name}`}
               >
                 <div className="tech-icon-inner" style={{ backgroundColor: tech.color }}>
                   {tech.icon}

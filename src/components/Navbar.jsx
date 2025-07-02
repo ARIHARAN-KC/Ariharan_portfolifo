@@ -85,7 +85,7 @@ function Navbar() {
               onError={handleLogoError} 
             />
           )}
-          <span className="logo-text">Ariharan K C | AI Dev</span>
+         { /*<span className="logo-text">Ariharan K C | AI Dev</span>*/}
         </Link>
 
         <div className={`navbar-menu ${isMobileMenuOpen ? 'active' : ''}`}>
