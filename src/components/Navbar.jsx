@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { HiOutlineMail } from 'react-icons/hi';
 import Logo from '../assets/logo.png';
 import '../Styles/Navbar.css';
@@ -55,10 +56,10 @@ function Navbar() {
       title: "LinkedIn" 
     },
     { 
-      icon: <FaTwitter />, 
-      url: "https://twitter.com/ariharan", 
-      label: "Visit Ariharan's Twitter Profile", 
-      title: "Twitter" 
+      icon: <FaXTwitter  />, 
+      url: "https://x.com/AriharanKC_007", 
+      label: "Visit Ariharan's X Profile", 
+      title: "X" 
     },
     { 
       icon: <HiOutlineMail />, 

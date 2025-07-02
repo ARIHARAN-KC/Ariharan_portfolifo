@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaHeart } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { HiOutlineMail } from 'react-icons/hi';
 import '../Styles/Footer.css';
 
@@ -18,10 +19,10 @@ function Footer() {
       title: "LinkedIn" 
     },
     { 
-      icon: <FaTwitter />, 
-      url: "https://twitter.com/ariharan", 
-      label: "Visit Ariharan’s Twitter Profile", 
-      title: "Twitter" 
+      icon: <FaXTwitter  />, 
+      url: "https://x.com/AriharanKC_007", 
+      label: "Visit Ariharan’s X Profile", 
+      title: "X" 
     },
     { 
       icon: <HiOutlineMail />, 

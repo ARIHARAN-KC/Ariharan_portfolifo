@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaLinkedin, FaTwitter, FaBrain } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaBrain } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { HiOutlineMail } from 'react-icons/hi';
 import { SiDjango, SiFlask, SiReact, SiNodedotjs, SiTensorflow, SiPytorch, SiStreamlit, SiMongodb } from 'react-icons/si';
 import { DiPython } from 'react-icons/di';
@@ -126,7 +127,7 @@ function Home() {
             {[
               { icon: <FaGithub />, url: "https://github.com/ARIHARAN-KC", label: "Visit Ariharan’s GitHub Profile", title: "GitHub" },
               { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/ariharankc07/", label: "Visit Ariharan’s LinkedIn Profile", title: "LinkedIn" },
-              { icon: <FaTwitter />, url: "https://twitter.com/ariharan", label: "Visit Ariharan’s Twitter Profile", title: "Twitter" },
+              { icon: <FaXTwitter  />, url: "https://x.com/AriharanKC_007", label: "Visit Ariharan’s X Profile", title: "X" },
               { icon: <HiOutlineMail />, url: "mailto:ariharankc@gmail.com", label: "Email Ariharan K C", title: "Email" },
             ].map((social, index) => (
               <a 
