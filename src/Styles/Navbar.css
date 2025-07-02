@@ -21,6 +21,7 @@
   background: transparent;
   z-index: 1000;
   transition: var(--transition);
+  height: 4rem; /* Fixed height to ensure consistent spacing */
 }
 
 .navbar.scrolled {
@@ -33,11 +34,12 @@
 .navbar-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1.2rem 5%;
+  padding: 0.8rem 5%; /* Reduced padding for consistent height */
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  height: 100%; /* Ensure container uses full navbar height */
 }
 
 /* Logo Styles */
@@ -54,15 +56,15 @@
 }
 
 .navbar-logo-image {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.3));
 }
 
 .navbar-logo-placeholder {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(79, 70, 229, 0.5);
   display: flex;
@@ -241,6 +243,10 @@
 
 /* Mobile Menu */
 @media (max-width: 992px) {
+  .navbar {
+    height: 4rem; /* Consistent height on mobile */
+  }
+
   .navbar-menu {
     position: fixed;
     top: 0;
@@ -293,7 +299,7 @@
 
 @media (max-width: 768px) {
   .navbar-container {
-    padding: 1rem 4%;
+    padding: 0.6rem 4%; /* Adjusted for smaller screens */
   }
 
   .logo-text {
@@ -322,6 +328,10 @@
 
   .logo-text {
     font-size: 1.1rem;
+  }
+
+  .navbar-container {
+    padding: 0.5rem 3%;
   }
 }
 

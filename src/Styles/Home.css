@@ -15,7 +15,7 @@
 /* Base Styles */
 .home-section {
   position: relative;
-  padding: 2rem 1rem;
+  padding: 4.5rem 1rem 2rem; /* Increased top padding to clear navbar */
   background-color: var(--darker);
   color: var(--light);
   min-height: 100vh;
@@ -373,7 +373,7 @@
 /* Tablet and Desktop Adjustments */
 @media (min-width: 768px) {
   .home-section {
-    padding: 3rem 2rem;
+    padding: 4.5rem 2rem 3rem; /* Adjusted top padding for navbar */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -424,7 +424,7 @@
 
 @media (min-width: 992px) {
   .home-section {
-    padding: 5rem;
+    padding: 5.5rem 5rem 5rem; /* Increased top padding for larger screens */
   }
 
   .profile-frame {
