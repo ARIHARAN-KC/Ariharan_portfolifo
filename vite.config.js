@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // ✅ CORRECT
+  base: '', // ✅ remove or set to empty string
 })
