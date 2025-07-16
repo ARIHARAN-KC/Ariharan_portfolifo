@@ -62,14 +62,10 @@ git clone https://github.com/ARIHARAN-KC/my-portfolio.git
 cd my-portfolio
 npm install
 2️⃣ Start Dev Server
-bash
-Copy
-Edit
+
 npm run dev
 3️⃣ Build for Production
-bash
-Copy
-Edit
+
 npm run build
 🌍 Live Site
 🔗 Visit Portfolio
